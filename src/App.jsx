@@ -6,6 +6,8 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './Services'
+import Process from './pages/Process'
+
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
       <Navbar/>
       <Hero/>
       <Services/>
+      <Process/>
     </>
   )
 }
