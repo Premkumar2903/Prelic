@@ -42,18 +42,25 @@ export default function Hero() {
   const [stage, setStage] = useState("idea");
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
+
   useEffect(() => {
-    const stages = ["idea", "structure", "build"];
+  const interval = setInterval(() => {
+    setActiveOutcome((current) => {
+      const currentIndex = outcomes.findIndex(
+        (outcome) => outcome.id === current
+      );
 
-    let index = 0;
+      return outcomes[(currentIndex + 1) % outcomes.length].id;
+    });
+  }, 3000);
 
-    const interval = setInterval(() => {
-      index = (index + 1) % stages.length;
-      setStage(stages[index]);
-    }, 3500);
+  return () => clearInterval(interval);
+}, []);
 
-    return () => clearInterval(interval);
-  }, []);
+
+  useEffect(() => {
+    setStage(activeOutcome === "website" ? "idea" : "build");
+  }, [activeOutcome]);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -268,7 +275,7 @@ export default function Hero() {
 
               {/* FLOATING DATA */}
 
-              <motion.div
+              {/* <motion.div
                 className="data-node node-a"
                 animate={{
                   y: [-5, 5, -5],
@@ -308,7 +315,7 @@ export default function Hero() {
               >
                 <span></span>
                 AI
-              </motion.div>
+              </motion.div> */}
 
             </motion.div>
 
@@ -372,16 +379,16 @@ export default function Hero() {
 
             {/* PRODUCT */}
 
-            <AnimatePresence mode="wait">
-
-              {stage === "build" && (
-                <motion.div
+            <AnimatePresence mode="sync">
+               <motion.div
+                key={activeOutcome}
+                style={{ transformStyle: "preserve-3d" }}
                   className={`product-object ${activeOutcome}`}
                   initial={{
                     opacity: 0,
-                    scale: 0.4,
-                    rotateX: -50,
-                    rotateY: 30,
+                    scale: 0.6,
+                    rotateX: -30,
+                    rotateY: 20,
                   }}
                   animate={{
                     opacity: 1,
@@ -391,8 +398,10 @@ export default function Hero() {
                   }}
                   exit={{
                     opacity: 0,
-                    scale: 0.5,
+                    scale: 0.6,
+                    rotateX: 30,
                   }}
+                  transition={{ duration: 0.35 }}
                 >
 
                   {activeOutcome === "website" && (
@@ -493,7 +502,6 @@ export default function Hero() {
                   )}
 
                 </motion.div>
-              )}
 
             </AnimatePresence>
 
