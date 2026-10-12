@@ -154,7 +154,7 @@ export default function Footer() {
             </div>
             
             <a
-                href="tel:+919876543210"
+                href="tel:+916382721836"
                 className="footer-direct-contact"
             >
                 <span className="footer-direct-icon">
