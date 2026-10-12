@@ -10,6 +10,7 @@ import Process from './pages/Process'
 import Industries from './pages/Industries'
 import Technologies from './pages/Technologies'
 import About from './pages/About'
+import Contact from './pages/Contact'
 
 
 
@@ -25,7 +26,7 @@ function App() {
       <Industries/>
       <Technologies/>
       <About/>
-      
+      <Contact/>
     </>
   )
 }
