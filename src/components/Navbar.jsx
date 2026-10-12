@@ -35,7 +35,7 @@ export default function Navbar() {
             <span className="brand-symbol-inner" />
           </span>
 
-          <span className="brand-name">prelic</span>
+          <span className="brand-name">Prelic</span>
           <span className="brand-period">.</span>
         </a>
 
