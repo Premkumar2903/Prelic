@@ -8,6 +8,7 @@ import Hero from './components/Hero'
 import Services from './Services'
 import Process from './pages/Process'
 import Industries from './pages/Industries'
+import Technologies from './pages/Technologies'
 
 
 
@@ -21,6 +22,7 @@ function App() {
       <Services/>
       <Process/>
       <Industries/>
+      <Technologies/>
     </>
   )
 }
