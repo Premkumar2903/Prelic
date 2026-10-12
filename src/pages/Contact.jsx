@@ -437,7 +437,7 @@ export default function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="What should we call you?"
+                      placeholder="Enter your name"
                       autoComplete="name"
                       required
                     />

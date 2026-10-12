@@ -21,7 +21,7 @@ import {
   faWhatsapp
 } from "@fortawesome/free-brands-svg-icons";
 
-import "./Footer.css";
+import "./footer.css";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
