@@ -80,6 +80,7 @@ export default function Hero() {
   return (
     <section
       className="hero"
+      id="home"
       onMouseMove={handleMouseMove}
     >
       <div className="hero-background">
