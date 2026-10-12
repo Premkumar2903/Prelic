@@ -11,6 +11,7 @@ import Industries from './pages/Industries'
 import Technologies from './pages/Technologies'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Footer from './components/Footer'
 
 
 
@@ -27,6 +28,7 @@ function App() {
       <Technologies/>
       <About/>
       <Contact/>
+      <Footer/>
     </>
   )
 }
